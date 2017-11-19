@@ -1,4 +1,4 @@
-"Aashik Samuel
+" Aashik Samuel
 " Colors {{{
 syntax enable           " enable syntax processing
 colorscheme badwolf
@@ -6,6 +6,7 @@ set termguicolors       " enable transparency
 hi Normal ctermbg=None
 hi NonText ctermbg=None
 set t_Co=256
+let g:badwolf_darkgutter = 1
 " }}}
 " Misc {{{
 set backspace=indent,eol,start
@@ -38,7 +39,7 @@ set foldenable          " don't fold files by default on open
 nnoremap <space> za
 set foldlevelstart=10   " start with fold level of 1
 " }}}
-" Custom Key Bindings and Leader Shortcuts{{{
+"  Custom Key Bindings and Leader Shortcuts{{{
 inoremap jk <esc>
 "  Navigation - Panes {{{ 
 " Line Shortcuts  {{{
@@ -58,7 +59,7 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 " }}}
 " }}}
-"  Leader Shortcuts {{{
+"   Leader Shortcuts {{{
 let mapleader=","
 nnoremap <leader>\| :vsp<CR>
 nnoremap <leader>-  :sp<CR>
@@ -76,10 +77,14 @@ nnoremap <leader>a :Ag
 nnoremap <leader>c :SyntasticCheck<CR>:Errors<CR>
 nnoremap <leader>1 :set number!<CR>
 nnoremap <leader>d :Make!
-nnoremap <leader>r :TestFile<CR>
+nnoremap <leader>t :TestFile<CR>
 vnoremap <leader>y "+y
-  "  }}}
-  " }}}
+"   for python-mode {{{
+nnoremap <leader>pm3 let g:pymode_python = 'python3'
+nnoremap <leader>pm2 let g:pymode_python = 'python2'
+" }}}
+"  }}}
+ " }}}
 
 " Vim Plug {{{
 call plug#begin('~/.vim/plugged')
@@ -96,6 +101,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'valloric/youcompleteme'
 Plug 'ervandew/supertab'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'klen/python-mode'
 call plug#end()
 " }}}
 " CtrlP {{{
@@ -144,6 +150,9 @@ let g:airline_right_sep = ''
 " youcompleteme {{{
 let g:ycm_python_binary_path = '/usr/bin/python3'
 let g:ycm_autoclose_preview_window_after_completion=1
+" }}}
+" python-mode {{{
+let g:pymode_python = 'python3'
 " }}}
 
 " AutoGroups {{{
