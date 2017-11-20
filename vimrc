@@ -9,6 +9,8 @@ set t_Co=256
 let g:badwolf_darkgutter = 1
 " }}}
 " Misc {{{
+set wildmenu
+set number
 set backspace=indent,eol,start
 let g:vimwiki_list = [{'path': '~/.wiki/'}]
 set mouse=v
@@ -102,6 +104,7 @@ Plug 'valloric/youcompleteme'
 Plug 'ervandew/supertab'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'klen/python-mode'
+Plug 'tmux-plugins/vim-tmux'
 call plug#end()
 " }}}
 " CtrlP {{{
