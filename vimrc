@@ -100,7 +100,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vimwiki/vimwiki'
 Plug 'scrooloose/nerdcommenter'
-Plug 'valloric/youcompleteme'
+" Plug 'valloric/youcompleteme'
 Plug 'ervandew/supertab'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'klen/python-mode'
@@ -150,9 +150,9 @@ let g:airline_right_sep = ''
  " Enable trimming of trailing whitespace when uncommenting
  let g:NERDTrimTrailingWhitespace = 1
  " }}}
-" youcompleteme {{{
-let g:ycm_python_binary_path = '/usr/bin/python3'
-let g:ycm_autoclose_preview_window_after_completion=1
+"  youcompleteme {{{
+" let g:ycm_python_binary_path = '/usr/bin/python3'
+" let g:ycm_autoclose_preview_window_after_completion=1
 " }}}
 " python-mode {{{
 let g:pymode_python = 'python3'
