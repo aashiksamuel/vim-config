@@ -86,6 +86,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vimwiki/vimwiki'
 Plug 'scrooloose/nerdcommenter'
 Plug 'valloric/youcompleteme'
+Plug 'ervandew/supertab'
 call plug#end()
 " }}}
 " CtrlP {{{
