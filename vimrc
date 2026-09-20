@@ -1,9 +1,9 @@
 "Aashik Samuel
-" Colors {{{ 
+" Colors {{{
 syntax enable           " enable syntax processing
 colorscheme badwolf
 set termguicolors       " enable transparency
-hi Normal ctermbg=None " enable transparency
+hi Normal ctermbg=None
 hi NonText ctermbg=None
 set t_Co=256
 " }}}
@@ -26,7 +26,7 @@ set autoindent
 " UI Layout {{{
 set number              " show line numbers
 set showcmd             " show command in bottom bar
-set nocursorline        " highlight current line
+set cursorline          " highlight current line
 set wildmenu
 set lazyredraw
 set showmatch           " higlight matching parenthesis
@@ -47,6 +47,8 @@ set foldenable          " don't fold files by default on open
 nnoremap <space> za
 set foldlevelstart=10   " start with fold level of 1
 " }}}
+" Custom Key Bindings and Leader Shortcuts{{{
+inoremap jk <esc>
 " Line Shortcuts {{{
 nnoremap j gj
 nnoremap k gk
@@ -58,9 +60,10 @@ let mapleader=","
 nnoremap <leader>m :silent make\|redraw!\|cw<CR>
 nnoremap <leader>h :A<CR>
 nnoremap <leader>ev :vsp $MYVIMRC<CR>
-nnoremap <leader>et :exec ":vsp /Users/dblack/notes/vim/" . strftime('%m-%d-%y') . ".md"<CR>
+nnoremap <leader>et :exec ":vsp /home/brobot/Notes/vim/" . strftime('%m-%d-%y') . ".md"<CR>
 nnoremap <leader>ez :vsp ~/.zshrc<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
+nnoremap <leader>sz :!source ~/.zshrc<CR>
 nnoremap <leader>l :call ToggleNumber()<CR>
 nnoremap <leader><space> :noh<CR>
 nnoremap <leader>s :mksession<CR>
@@ -69,8 +72,8 @@ nnoremap <leader>c :SyntasticCheck<CR>:Errors<CR>
 nnoremap <leader>1 :set number!<CR>
 nnoremap <leader>d :Make!
 nnoremap <leader>r :TestFile<CR>
-nnoremap <leader>g :call RunGoFile()<CR>
 vnoremap <leader>y "+y
+ " }}}
  " }}}
 
 " Vim Plug {{{
@@ -134,6 +137,7 @@ let g:airline_right_sep = ''
  " }}}
 " youcompleteme {{{
 let g:ycm_python_binary_path = '/usr/bin/python3'
+let g:ycm_autoclose_preview_window_after_completion=1
 " }}}
 
 " AutoGroups {{{
