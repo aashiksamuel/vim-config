@@ -95,6 +95,7 @@ Plug 'vimwiki/vimwiki'
 Plug 'scrooloose/nerdcommenter'
 Plug 'valloric/youcompleteme'
 Plug 'ervandew/supertab'
+Plug 'terryma/vim-multiple-cursors'
 call plug#end()
 " }}}
 " CtrlP {{{
