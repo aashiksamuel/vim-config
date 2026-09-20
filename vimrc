@@ -1,4 +1,4 @@
-" Douglas Black
+"Aashik Samuel
 " Colors {{{ 
 syntax enable           " enable syntax processing
 colorscheme badwolf
@@ -192,4 +192,6 @@ function! <SID>CleanFile()
 endfunction
 " }}}
 
+
+" Thanks to Douglas Black <http://dougblack.io/>
 " vim:foldmethod=marker:foldlevel=0
