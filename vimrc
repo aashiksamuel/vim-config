@@ -11,6 +11,7 @@ set t_Co=256
 set backspace=indent,eol,start
 let g:vimwiki_list = [{'path': '~/.wiki/'}]
 set mouse=v
+let g:airline_powerline_fonts = 1
 " }}}
 " Spaces & Tabs {{{
 set tabstop=4           " 4 space tab
@@ -22,16 +23,6 @@ set modelines=1
 filetype indent on
 filetype plugin on
 set autoindent
-" }}}
-" UI Layout {{{
-set number              " show line numbers
-set showcmd             " show command in bottom bar
-set cursorline          " highlight current line
-set wildmenu
-set lazyredraw
-set showmatch           " higlight matching parenthesis
-set fillchars+=vert:┃
-let g:airline_powerline_fonts = 1 "powerline font support for airline
 " }}}
 " Searching {{{
 set ignorecase          " ignore case when searching
@@ -49,14 +40,28 @@ set foldlevelstart=10   " start with fold level of 1
 " }}}
 " Custom Key Bindings and Leader Shortcuts{{{
 inoremap jk <esc>
-" Line Shortcuts {{{
+"  Navigation - Panes {{{ 
+" Line Shortcuts  {{{
 nnoremap j gj
 nnoremap k gk
 " highlight last inserted text
 nnoremap gV `[v`]
 " }}}
-" Leader Shortcuts {{{
+"  Panes {{{ 
+set splitright
+set splitbelow
+nnoremap <C-W>\| :vnew<CR>
+nnoremap <C-W>- :new<CR>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+" }}}
+" }}}
+"  Leader Shortcuts {{{
 let mapleader=","
+nnoremap <leader>\| :vsp<CR>
+nnoremap <leader>-  :sp<CR>
 nnoremap <leader>m :silent make\|redraw!\|cw<CR>
 nnoremap <leader>h :A<CR>
 nnoremap <leader>ev :vsp $MYVIMRC<CR>
@@ -73,8 +78,8 @@ nnoremap <leader>1 :set number!<CR>
 nnoremap <leader>d :Make!
 nnoremap <leader>r :TestFile<CR>
 vnoremap <leader>y "+y
- " }}}
- " }}}
+  "  }}}
+  " }}}
 
 " Vim Plug {{{
 call plug#begin('~/.vim/plugged')
