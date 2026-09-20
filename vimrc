@@ -73,6 +73,21 @@ nnoremap <leader>g :call RunGoFile()<CR>
 vnoremap <leader>y "+y
  " }}}
 
+" Vim Plug {{{
+call plug#begin('~/.vim/plugged')
+Plug 'vim-airline/vim-airline'
+Plug 'janko-m/vim-test'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'scrooloose/syntastic'
+Plug 'simnalamburt/vim-mundo'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vimwiki/vimwiki'
+Plug 'scrooloose/nerdcommenter'
+Plug 'valloric/youcompleteme'
+call plug#end()
+" }}}
 " CtrlP {{{
 let g:ctrlp_match_window = 'bottom,order:ttb'
 let g:ctrlp_switch_buffer = 0
@@ -93,6 +108,31 @@ let g:syntastic_python_flake8_args='--ignore=E501'
 let g:syntastic_ignore_files = ['.java$']
 let g:syntastic_python_python_exec = 'python3'
 " }}}
+" Testing {{{
+let test#strategy = 'neovim'
+let test#python#runner = 'nose'
+" }}} 
+" Vim Mundo {{{
+set undofile
+set undodir=~/tmp/undo
+nnoremap <F5> :MundoToggl<CR>
+"  }}}
+" airline {{{
+set laststatus=2
+let g:airline_theme = 'badwolf'
+let g:airline_left_sep = ''
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_sep = ''
+ " }}}
+ " NERD-Commenter {{{
+ " Allow commenting and inverting empty lines (useful when commenting a region)
+ let g:NERDCommentEmptyLines = 1
+ " Enable trimming of trailing whitespace when uncommenting
+ let g:NERDTrimTrailingWhitespace = 1
+ " }}}
+
+
 " AutoGroups {{{
 augroup configgroup
     autocmd!
@@ -108,42 +148,12 @@ augroup configgroup
     autocmd BufEnter *.md setlocal ft=markdown
 augroup END
 " }}}
-" Testing {{{
-let test#strategy = 'neovim'
-let test#python#runner = 'nose'
-" }}} 
 " Backups {{{
 set backup
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set backupskip=/tmp/*,/private/tmp/*
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set writebackup
-" }}}
- " Vim Mundo {{{
-set undofile
-set undodir=~/tmp/undo
-nnoremap <F5> :MundoToggl<CR>
-" }}}
-" Vim Plug {{{
-call plug#begin('~/.vim/plugged')
-Plug 'vim-airline/vim-airline'
-Plug 'janko-m/vim-test'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'scrooloose/syntastic'
-Plug 'simnalamburt/vim-mundo'
-Plug 'tpope/vim-abolish'
-Plug 'tpope/vim-fugitive'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'vimwiki/vimwiki'
-call plug#end()
-" }}}
-" airline {{{
-set laststatus=2
-let g:airline_theme = 'badwolf'
-let g:airline_left_sep = ''
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_sep = ''
 " }}}
 " Custom Functions {{{
 function! ToggleNumber()
@@ -179,4 +189,5 @@ function! <SID>CleanFile()
     call cursor(l, c)
 endfunction
 " }}}
+
 " vim:foldmethod=marker:foldlevel=0
