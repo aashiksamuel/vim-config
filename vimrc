@@ -131,7 +131,9 @@ let g:airline_right_sep = ''
  " Enable trimming of trailing whitespace when uncommenting
  let g:NERDTrimTrailingWhitespace = 1
  " }}}
-
+" youcompleteme {{{
+let g:ycm_python_binary_path = '/usr/bin/python3'
+" }}}
 
 " AutoGroups {{{
 augroup configgroup
